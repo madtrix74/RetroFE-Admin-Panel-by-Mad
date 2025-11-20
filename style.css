@@ -1,0 +1,454 @@
+/* =================================== */
+/* STYLES GLOBAUX POUR TOUT LE PROJET */
+/* =================================== */
+
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #383838; /* Gris plus clair */
+    color: #E0E0E0; 
+    margin: 0;
+    padding: 20px;
+}
+
+.container { 
+    max-width: 900px; 
+    margin: auto; 
+    background: #4a4a4a; /* Fond de conteneur plus clair */
+    padding: 20px; 
+    border-radius: 12px; /* Plus arrondi */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Ombre portee */
+}
+
+h1 { 
+    border-bottom: 2px solid #666; 
+    padding-bottom: 10px;
+    color: #FFF;
+}
+
+h2 {
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+}
+
+pre { 
+    background: #000; 
+    padding: 15px; 
+    border-radius: 5px; 
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    border: 1px solid #555;
+}
+
+/* --- Onglets --- */
+.tabs { 
+    overflow: hidden; 
+    border-bottom: 1px solid #666; 
+    margin-bottom: 25px; 
+}
+.tabs a {
+    background-color: #555;
+    color: #EEE;
+    float: left;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+    transition: all 0.3s ease; /* Animation */
+}
+.tabs a:hover { 
+    background-color: #666; 
+}
+.tabs a.active { 
+    background-color: #008CBA; 
+    color: white; 
+    font-weight: bold;
+}
+
+/* --- Grille --- */
+.grid-container { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 25px; 
+}
+.form-column { /* Vide */ }
+.helper-column { /* Vide */ }
+
+/* --- Boites d'aide --- */
+.helper-box {
+    background: #424242; /* Fond plus clair */
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 5px solid #FFC107; /* Jaune pour les controles */
+    height: fit-content; 
+    margin-bottom: 20px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Ombre subtile */
+}
+.helper-box.intro-box {
+    border-top-color: #008CBA; /* Bleu pour les reglages */
+}
+.helper-box h3 {
+    margin-top: 0;
+    color: #FFC107; /* Titre Jaune */
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    font-size: 1.3em;
+}
+.helper-box.intro-box h3 {
+    color: #00C4FF;
+}
+.helper-box h4 { 
+    color: #00C4FF; 
+    margin-bottom: 5px; 
+    margin-top: 15px;
+}
+.helper-box code {
+    background: #5a5a5a;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: 2px;
+    display: inline-block;
+    font-family: monospace;
+    color: #FFF;
+    transition: all 0.2s ease;
+}
+.helper-box code:hover {
+    background: #008CBA;
+}
+.helper-box .note { 
+    font-style: italic; 
+    color: #CCC; 
+    font-size: 0.9em; 
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* --- Formulaire --- */
+.form-group {
+    background: #424242; /* Fond plus clair */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #008CBA;
+    transition: background-color 0.3s ease; /* Animation */
+}
+.form-group:hover {
+    background-color: #454545;
+}
+.form-group label {
+    display: block;
+    font-size: 1.3em;
+    font-weight: 500; /* Moins gras */
+    color: #00C4FF;
+    margin-bottom: 10px;
+}
+.form-group .comment {
+    font-size: 0.95em; /* Plus lisible */
+    color: #D0D0D0; /* Plus clair */
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px; /* Plus de padding */
+    box-sizing: border-box; 
+    border-radius: 5px;
+    border: 2px solid #666; /* Bordure plus visible */
+    background: #505050;
+    color: #FFF;
+    font-size: 1.1em;
+    transition: all 0.3s ease; /* Animation */
+}
+.form-group input:focus, .form-group select:focus {
+    border-color: #00C4FF;
+    box-shadow: 0 0 8px rgba(0,196,255,0.5);
+    outline: none;
+    background: #555;
+}
+.form-group input[type="text"] { width: 100%; } 
+.form-group input[type="number"] { width: 150px; }
+.form-group select { width: 150px; }
+
+.form-section {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #76FF03; /* Vert lime */
+    background: #525252;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+/* =================================== */
+/* NOUVELLE REGLE D'ALIGNEMENT */
+/* =================================== */
+.form-column form > *:first-child {
+    margin-top: 0;
+}
+
+/* --- Boutons --- */
+.btn-save, .btn-install {
+    color: white; 
+    padding: 15px 30px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.btn-save {
+    background: #4CAF50; 
+}
+.btn-save:hover {
+    background: #45a049;
+    transform: translateY(-2px); /* Effet "pop" */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.btn-install {
+    background: #008CBA;
+}
+.btn-install:hover {
+    background: #007ba8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* --- Alertes & Messages --- */
+.save-message {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.success { background: #4CAF50; color: white; }
+.error { background: #f44336; color: white; }
+
+.loading-message { 
+    background: #FFC107; color: #333; padding: 15px; border-radius: 8px; 
+    text-align: center; font-size: 1.2em; display: none; /* Cache par defaut */
+    animation: pulse 1.5s infinite;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1.2s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes pulse {
+    0% { background-color: #FFC107; }
+    50% { background-color: #FFEB3B; }
+    100% { background-color: #FFC107; }
+}
+/* =================================== */
+/* STYLES POUR LA PAGE DES COLLECTIONS */
+/* =================================== */
+
+/* Conteneur pour la liste des collections */
+.collection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Chaque ligne de la liste */
+.collection-item {
+    display: flex;
+    justify-content: space-between; /* Aligne les elements */
+    align-items: center;
+    background: #424242;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-out;
+}
+
+.collection-item:hover {
+    background: #4a4a4a;
+    transform: scale(1.02); /* Effet "pop" */
+}
+
+/* Le nom de la collection */
+.collection-item-name {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #FFF;
+}
+
+/* Le formulaire a droite */
+.collection-item form {
+    margin: 0; /* Annule la marge par defaut du formulaire */
+}
+
+/* Le bouton supprimer */
+.btn-delete {
+    background: #f44336; /* Rouge */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background: #d32f2f; /* Rouge fonce */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+/* Conteneur pour les boutons d'action de la collection */
+.collection-item-actions {
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+}
+
+/* Le nouveau bouton Editer (Maintenant stylisé) */
+.btn-edit {
+    background: #FFC107; /* Couleur Ambre/Jaune */
+    color: #222; /* Texte fonce */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-edit:hover {
+    background: #FFB300; /* Ambre plus fonce */
+    color: #000;
+    transform: translateY(-2px); /* Effet "pop" */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+}
+/* =================================== */
+/* BOUTON DE LANCEMENT (HEADER) */
+/* =================================== */
+
+.header-actions {
+    /* Vient se placer en haut a droite */
+    position: absolute;
+    top: 25px;
+    right: 30px;
+}
+
+.btn-launch {
+    background: #76FF03; /* Vert lime */
+    color: #222; /* Texte fonce */
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.btn-launch:hover {
+    background: #64dd17; /* Vert plus fonce */
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+
+/* Style de la boite de log */
+pre.live-log {
+    background: #1e1e1e; /* Noir terminal */
+    color: #cccccc; /* Texte gris clair */
+    font-family: Consolas, "Courier New", monospace;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Style de base pour les lignes colorees */
+pre.live-log span {
+    display: inline; /* Les spans ne doivent pas casser la ligne */
+    font-weight: bold;
+}
+
+/* Definition des couleurs ANSI */
+.ansi-bold-red { color: #d16969; }
+.ansi-bold-green { color: #b5cea8; }
+.ansi-bold-yellow { color: #dcdcaa; }
+.ansi-bold-blue { color: #569cd6; }
+.ansi-bold-cyan { color: #4ec9b0; }
+
+/* =================================== */
+/* EN-TETE DE PAGE (Titre + Bouton) */
+/* =================================== */
+.page-header {
+    display: flex;
+    justify-content: space-between; /* Met le titre a gauche, le bouton a droite */
+    align-items: center;
+    border-bottom: 2px solid #666; 
+    padding-bottom: 15px;
+    margin-bottom: 25px; /* Espace sous l'en-tete */
+}
+
+.page-header h1 {
+    /* On enleve les anciens styles du h1 */
+    border-bottom: none; 
+    padding-bottom: 0;
+    margin: 0; /* Annule la marge par defaut du h1 */
+}
+
+/* On s'assure que le bouton launch a une marge */
+.btn-launch {
+    margin-left: 20px;
+    flex-shrink: 0; /* Empeche le bouton de retrecir */
+}
+
+/* On supprime l'ancien style qui posait probleme */
+.header-actions {
+    display: none; /* On cache l'ancien bouton flottant */
+}
+/* =================================== */
+/* EN-TETE DE PAGE (CORRIGÉ) */
+/* =================================== */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Onglets a gauche, bouton a droite */
+    align-items: center;
+    border-bottom: 2px solid #666; 
+    padding-bottom: 15px;
+    margin-bottom: 25px; /* Espace sous l'en-tete */
+}
+
+/* On s'assure que les onglets n'ont plus de bordure */
+.tabs {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* On s'assure que le bouton launch a une marge */
+.btn-launch {
+    margin-left: 20px;
+    flex-shrink: 0; /* Empeche le bouton de retrecir */
+}
+
+/* On cache l'ancien style qui posait probleme */
+.header-actions {
+    display: none; 
+}
